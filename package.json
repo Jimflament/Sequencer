@@ -10,5 +10,10 @@
   },
   "devDependencies": {
     "vite": "^4.2.0"
+  },
+  "dependencies": {
+    "node": "^19.8.1",
+    "node-fetch": "^3.3.1",
+    "tone": "^14.7.77"
   }
 }
