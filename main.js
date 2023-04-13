@@ -3,6 +3,7 @@ import noteBlocks from './src/components/noteBlocks';
 // import background from './src/components/background';
 
 const app = document.querySelector('#app');
+const startBtn = document.querySelector('#start');
 
 app.innerHTML = `
   <div class="container">
@@ -14,9 +15,8 @@ app.innerHTML = `
   </div>
 `;
 
-// startBtn.addEventListener('click', () => {
-//   noteBlocks();
-// });
-// testComp();
-noteBlocks();
-// background();
+startBtn.addEventListener('click', () => {
+  noteBlocks();
+});
+
+// noteBlocks();
