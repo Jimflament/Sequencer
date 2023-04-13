@@ -16,23 +16,12 @@ body {
   transform: perspective(400px) rotateX(50deg);
 }
 
-/* .lane {
-  width: 100px;
-  height: 100%;
-  margin: 0 10px;
-  position: relative;
-  border: 1px solid black;
-  background: linear-gradient(to top, #fff, #8200ff);
-} */
-
 .lane {
   width: 100px;
   height: 100%;
   margin: 0 10px;
   position: relative;
   border: 1px solid black;
-  /* background: linear-gradient(to top, #000000, #8200ff, #000000); */
-  /* background: linear-gradient(to bottom, #000000, #8200ff, #000000); */
   background: linear-gradient(to right, #000, #8200ff, #000);
 }
 
@@ -57,6 +46,7 @@ body {
   animation-duration: 2.5s;
   animation-timing-function: linear;
   cursor: pointer;
+  z-index: 100;
 }
 
 @keyframes fall {
@@ -98,4 +88,27 @@ body {
   background: linear-gradient(to top, #008080, #ffa500);
   border-radius: 100px;
   border: 10px solid black;
+}
+
+/*  */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  background: linear-gradient(-45deg, #ffff10, #e73c3c, #234fd5, #23d541);
+  background-size: 400% 400%;
+  height: 100vh;
+  animation: gradient;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
 }

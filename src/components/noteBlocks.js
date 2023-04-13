@@ -2,6 +2,8 @@ import * as Tone from 'tone';
 
 const noteBlocks = () => {
   const pingSound = new Audio('/sounds/error.mp3');
+  const bodyEl = document.querySelector('body');
+  const jsConfetti = new JSConfetti();
 
   fetch('https://api-hitloop.responsible-it.nl/test_json?seed=120')
     .then((response) => response.json())
@@ -13,7 +15,7 @@ const noteBlocks = () => {
     const notes = data.tracks[0].notes;
     const noteNames = notes.map((note) => note.name);
     const noteTime = notes.map((note) => note.time);
-    const noteVelocity = notes.map((note) => note.velocity);
+    const noteDuration = notes.map((note) => note.duration);
 
     // CODE JESSE
     function getRandomLane() {
@@ -39,6 +41,16 @@ const noteBlocks = () => {
           noteNames[randomNumber],
           noteTime[randomNumber],
         );
+
+        console.log(noteDuration[randomNumber]);
+
+        bodyEl.style.animationDuration = `${noteDuration[randomNumber * 3]}s`;
+
+        jsConfetti.addConfetti({
+          emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+          confettiNumber: 10,
+        });
+
         block.remove();
       });
       setTimeout(() => {

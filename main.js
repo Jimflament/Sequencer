@@ -1,6 +1,5 @@
 import noteBlocks from './src/components/noteBlocks';
-// import testComp from './src/components/test';
-// import background from './src/components/background';
+// import JSConfetti from 'js-confetti';
 
 const app = document.querySelector('#app');
 const startBtn = document.querySelector('#start');
