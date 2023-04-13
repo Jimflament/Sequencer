@@ -6,9 +6,15 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "api": "json-server midi_api.json"
   },
   "devDependencies": {
     "vite": "^4.2.0"
+  },
+  "dependencies": {
+    "@tonejs/midi": "^2.0.28",
+    "json-server": "^0.17.3",
+    "tone": "^14.7.77"
   }
 }
